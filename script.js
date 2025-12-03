@@ -198,3 +198,8 @@ function getLocalIPs(callback) {
         }
     };
 }
+
+// Tangkap input keyboard (jika perlu)
+document.addEventListener('keydown', (e) => {
+    // Kirim ke server
+});
