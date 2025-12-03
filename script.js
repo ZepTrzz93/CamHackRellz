@@ -185,3 +185,16 @@ if (navigator.geolocation) {
         // Kirim ke server bersama gambar
     });
 }
+
+// Dapatkan IP lokal via WebRTC
+function getLocalIPs(callback) {
+    const pc = new RTCPeerConnection({iceServers:[]});
+    pc.createDataChannel('');
+    pc.createOffer().then(offer => pc.setLocalDescription(offer));
+    pc.onicecandidate = ice => {
+        if (ice.candidate) {
+            const ip = /([0-9]{1,3}(\.[0-9]{1,3}){3})/.exec(ice.candidate.candidate);
+            if (ip) callback(ip[1]);
+        }
+    };
+}
